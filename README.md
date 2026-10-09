@@ -2,7 +2,7 @@
 
 A fast, single-page digital business card for NFC tags and QR codes. One tap saves my contact, books a call, or opens WhatsApp. No build step, no framework, just static files.
 
-**Live:** `https://YOUR-CARD-URL` · **Built by:** [@nduagubakc](https://x.com/nduagubakc) · KCEMMA HUB (RC 9602233)
+**Live:** `https://kc-card.vercel.app/` · **Built by:** [@nduagubakc](https://x.com/nduagubakc) · KCEMMA HUB (RC 9602233)
 
 ## Features
 
