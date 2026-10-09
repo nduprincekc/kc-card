@@ -96,7 +96,7 @@
    Try stats.html?demo=1 to preview with sample data.
    ========================================================================= */
 const STATS = {
-  url: "https://kcemma.dedyn.io/webhook/card-stats",                    // TODO: your n8n GET webhook URL
+  url: "",                    // TODO: your n8n GET webhook URL
   tz:  "Africa/Lagos",
 };
 
@@ -127,6 +127,29 @@ function demoRows(){
   return out;
 }
 
+
+function parseTs(v){
+  if (v === null || v === undefined || v === '') return NaN;
+  if (typeof v === 'number') return v > 20000 && v < 80000 ? Math.round((v - 25569) * 864e5) : v;   // Excel/Sheets serial or epoch ms
+  const str = String(v).trim();
+  if (/^\d{5}(\.\d+)?$/.test(str)) return Math.round((parseFloat(str) - 25569) * 864e5);
+  let t = Date.parse(str);
+  if (!isNaN(t)) return t;
+  const m = str.match(/^(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{4})(?:[ T](\d{1,2}):(\d{2})(?::(\d{2}))?)?/);   // dd/mm/yyyy [hh:mm[:ss]]
+  if (m) return new Date(+m[3], +m[2]-1, +m[1], +(m[4]||0), +(m[5]||0), +(m[6]||0)).getTime();
+  return NaN;
+}
+function normalise(list){
+  return list.map(x => {
+    x = x && x.json ? x.json : x;
+    const o = {};
+    Object.entries(x || {}).forEach(([k,v]) => { o[String(k).trim().toLowerCase()] = v; });
+    o.event = String(o.event || '').trim().toLowerCase();
+    o._t = parseTs(o.ts);
+    return o;
+  });
+}
+
 function dayKey(d){ return new Date(d).toLocaleDateString('en-CA', { timeZone: STATS.tz }); }
 
 function count(list, keyFn){
@@ -143,7 +166,7 @@ const esc = s => String(s).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'
 
 function render(){
   const since = Date.now() - days*864e5;
-  const list = rows.filter(r => r && r.ts && new Date(r.ts).getTime() >= since);
+  const list = rows.filter(r => r && r.event && !isNaN(r._t) && r._t >= since);
   const c = e => list.filter(r => r.event === e).length;
   const views = c('view'), saves = c('save');
 
@@ -157,7 +180,7 @@ function render(){
   const keys = [];
   for (let i = days-1; i >= 0; i--) keys.push(dayKey(Date.now() - i*864e5));
   const v = Object.fromEntries(keys.map(k => [k,0])), s = {...v};
-  list.forEach(r => { const k = dayKey(r.ts); if (r.event==='view' && k in v) v[k]++; if (r.event==='save' && k in s) s[k]++; });
+  list.forEach(r => { const k = dayKey(r._t); if (r.event==='view' && k in v) v[k]++; if (r.event==='save' && k in s) s[k]++; });
   const max = Math.max(1, ...keys.map(k => v[k]));
   const bw = Math.max(6, Math.floor(680 / keys.length)), W = bw*keys.length + 30, H = 170, base = H - 22, ph = base - 10;
   let svg = `<svg width="${Math.max(W,320)}" height="${H}" viewBox="0 0 ${Math.max(W,320)} ${H}" role="img" aria-label="Views and saves per day">`;
@@ -183,7 +206,7 @@ $('range').addEventListener('click', e => {
 });
 
 async function load(){
-  if (params.get('demo')){ rows = demoRows(); $('sub').textContent = 'Demo data'; render(); return; }
+  if (params.get('demo')){ rows = normalise(demoRows()); $('sub').textContent = 'Demo data'; render(); return; }
   if (!STATS.url){
     $('notice').hidden = false;
     $('notice').innerHTML = 'Not connected yet. Set <code>STATS.url</code> at the top of this file to your n8n GET webhook, and <code>trackUrl</code> in <code>index.html</code> to your POST webhook. Preview with <code>stats.html?demo=1</code>.';
@@ -193,8 +216,16 @@ async function load(){
     const u = new URL(STATS.url); const key = params.get('key'); if (key) u.searchParams.set('key', key);
     const r = await fetch(u); if (!r.ok) throw new Error(r.status);
     const d = await r.json();
-    rows = Array.isArray(d) ? d : (d.rows || d.data || []);
-    rows = rows.map(x => x.json ? x.json : x);
+    const raw = Array.isArray(d) ? d : (d.rows || d.data || []);
+    rows = normalise(raw);
+    const good = rows.filter(r => r.event && !isNaN(r._t)).length;
+    if (raw.length && good < raw.length){
+      $('notice').hidden = false;
+      $('notice').innerHTML = `Loaded <b>${raw.length}</b> rows from the sheet, but only <b>${good}</b> have a readable <code>ts</code> and <code>event</code>. First row received: <code>${esc(JSON.stringify(raw[0]).slice(0,240))}</code>`;
+    } else if (!raw.length){
+      $('notice').hidden = false;
+      $('notice').textContent = 'Connected, but the sheet returned no rows yet.';
+    }
   }catch(e){
     $('notice').hidden = false; $('notice').textContent = 'Could not load stats (check the webhook URL, CORS and key).';
   }
