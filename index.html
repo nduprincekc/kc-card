@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>KC Nduaguba — AI Automation Engineer &amp; Full-Stack Developer</title>
+<meta name="theme-color" content="#06231b" id="themeColor" />
+<meta name="description" content="KC Nduaguba — AI Automation Engineer and Full-Stack Developer in Lagos. n8n workflows, AI agents and web apps. Save my contact or book a call." />
+<meta name="author" content="KC Nduaguba" />
+
+<!-- Apply saved theme before first paint (no flash) -->
+<script>
+(function(){
+  var t = 'dark';
+  try{ t = localStorage.getItem('kc-theme') || 'dark'; }catch(e){}
+  document.documentElement.dataset.theme = t;
+  var m = document.getElementById('themeColor');
+  if (m) m.setAttribute('content', t === 'light' ? '#f6efe3' : '#06231b');
+})();
+</script>
+
+<!-- TODO: replace YOUR-CARD-URL with the live address of this page (absolute URLs required for previews) -->
+<link rel="canonical" href="https://YOUR-CARD-URL/" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="KC Nduaguba" />
+
+<meta property="og:site_name" content="KC Nduaguba" />
+<meta property="og:title" content="KC Nduaguba — AI Automation Engineer" />
+<meta property="og:description" content="n8n workflows · AI agents · Full-stack apps. Save my contact or book a call." />
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://YOUR-CARD-URL/" />
+<meta property="og:image" content="https://YOUR-CARD-URL/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="KC Nduaguba — AI Automation Engineer" />
+<meta property="profile:first_name" content="KC" />
+<meta property="profile:last_name" content="Nduaguba" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@nduagubakc" />
+<meta name="twitter:title" content="KC Nduaguba — AI Automation Engineer" />
+<meta name="twitter:description" content="n8n workflows · AI agents · Full-stack apps. Save my contact or book a call." />
+<meta name="twitter:image" content="https://YOUR-CARD-URL/og-image.png" />
+
+<style>
+  /* ---------- Design tokens (dark default, light via [data-theme="light"]) ---------- */
+  :root{
+    --ink:#05201a; --teal:#0b3d2e; --teal-2:#1c6a4c;
+    --text:#f6efe3; --text-dim:rgba(246,239,227,0.70);
+    --accent:#FFD2A0; --accent-deep:#F2A25A; --ember:#FF8A4C;
+    --line:rgba(255,205,150,0.20); --line-soft:rgba(255,205,150,0.11);
+    --surface:rgba(255,255,255,0.025); --surface-hover:rgba(255,215,180,0.07);
+    --chip-a:rgba(255,210,160,0.10); --chip-b:rgba(255,210,160,0.03);
+    --glow:rgba(255,190,120,0.24);
+    --h1-a:#f6efe3; --h1-b:#FFD2A0; --h1-c:#F2A25A;
+    --bg-1:rgba(255,138,76,0.22); --bg-2:rgba(242,162,90,0.20);
+    --field-a:var(--teal-2); --field-b:var(--teal); --field-c:var(--ink);
+    --toast-bg:#0a201f; --sheet-bg:#f6efe3; --sheet-text:#0b3d2e; --sheet-sub:#3f6a58;
+    --shadow:rgba(0,0,0,0.6);
+    --r:16px;
+    --serif:Georgia,"Times New Roman","Iowan Old Style",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color-scheme:dark;
+  }
+  :root[data-theme="light"]{
+    --text:#0b3d2e; --text-dim:rgba(11,61,46,0.72);
+    --accent:#9a4a0c; --accent-deep:#b8610f; --ember:#d9692b;
+    --line:rgba(11,61,46,0.20); --line-soft:rgba(11,61,46,0.12);
+    --surface:rgba(11,61,46,0.035); --surface-hover:rgba(11,61,46,0.075);
+    --chip-a:rgba(11,61,46,0.08); --chip-b:rgba(11,61,46,0.03);
+    --glow:rgba(255,170,100,0.32);
+    --h1-a:#0b3d2e; --h1-b:#1c6a4c; --h1-c:#9a4a0c;
+    --bg-1:rgba(255,138,76,0.20); --bg-2:rgba(28,106,76,0.14);
+    --field-a:#fbf3e6; --field-b:#f3e8d6; --field-c:#e9dcc6;
+    --toast-bg:#0b3d2e; --sheet-bg:#ffffff; --shadow:rgba(11,61,46,0.28);
+    color-scheme:light;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; }
+  body{
+    min-height:100svh; font-family:var(--sans); color:var(--text);
+    background:
+      radial-gradient(70% 45% at 100% 8%, var(--bg-1), transparent 70%) fixed,
+      radial-gradient(80% 50% at 0% 100%, var(--bg-2), transparent 70%) fixed,
+      radial-gradient(120% 80% at 50% -10%, var(--field-a) 0%, var(--field-b) 40%, var(--field-c) 80%) fixed;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    display:flex; justify-content:center;
+    padding:max(20px, env(safe-area-inset-top)) 18px max(28px, env(safe-area-inset-bottom));
+    transition:color .25s ease;
+  }
+  .card{
+    width:100%; max-width:420px; align-self:center; position:relative;
+    padding:38px 26px 26px; border-radius:24px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0) 40%);
+    border:1px solid var(--line);
+    box-shadow:0 1px 0 rgba(255,255,255,0.05) inset, 0 30px 70px -30px var(--shadow);
+    overflow:hidden;
+  }
+  .card::before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(65% 34% at 50% 16%, var(--glow), transparent 72%);
+    pointer-events:none; transform-origin:50% 15%; will-change:transform, opacity;
+  }
+  @keyframes glow{ from{ transform:scale(1); opacity:.80; } to{ transform:scale(1.10); opacity:1; } }
+
+  /* ---------- Toolbar: install · language · theme ---------- */
+  .toolbar{
+    position:absolute; z-index:6; top:12px; left:12px; right:12px;
+    display:flex; align-items:center; justify-content:space-between; gap:8px; pointer-events:none;
+  }
+  .toolbar > *{ pointer-events:auto; }
+  .tb-right{ display:flex; align-items:center; gap:6px; margin-left:auto; }
+  .pill{
+    display:inline-flex; align-items:center; gap:2px; padding:3px; border-radius:999px;
+    border:1px solid var(--line); background:rgba(6,32,26,0.55);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+  }
+  :root[data-theme="light"] .pill{ background:rgba(255,255,255,0.7); }
+  .pill button,.iconbtn{
+    font-family:var(--sans); font-size:11px; font-weight:650; letter-spacing:0.04em; cursor:pointer;
+    color:var(--text); background:transparent; border:0; border-radius:999px; min-width:32px; height:28px; padding:0 8px;
+    display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  }
+  .pill button[aria-pressed="true"]{ background:linear-gradient(135deg,#ffe0b8,var(--accent-deep)); color:#2a1706; }
+  .iconbtn{ border:1px solid var(--line); background:rgba(6,32,26,0.55); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); width:34px; height:34px; padding:0; }
+  :root[data-theme="light"] .iconbtn{ background:rgba(255,255,255,0.7); }
+  .iconbtn svg{ width:16px; height:16px; color:var(--accent); }
+  .iconbtn.install{ width:auto; padding:0 12px; font-size:11.5px; height:34px; }
+  .iconbtn[hidden]{ display:none; }
+  #icoSun{ display:none; } :root[data-theme="light"] #icoSun{ display:block; } :root[data-theme="light"] #icoMoon{ display:none; }
+
+  .eyebrow{ position:relative; text-align:center; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:var(--accent); opacity:0.85; margin:0 0 18px; }
+
+  .portrait{ position:relative; margin:-38px -26px 20px; aspect-ratio:4/5; overflow:hidden; background:#0a201f; }
+  .portrait[hidden]{ display:none; }
+  .portrait img,.portrait video{ width:100%; height:100%; object-fit:cover; object-position:50% 20%; display:block; }
+  .portrait::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:40%; background:linear-gradient(180deg, transparent 60%, rgba(6,35,27,0.55)); pointer-events:none; }
+
+  .monogram{
+    position:relative; width:104px; height:104px; margin:4px auto 20px; border-radius:50%;
+    display:grid; place-items:center; font-family:var(--serif); font-size:38px; color:#2a1706; letter-spacing:0.02em;
+    background:linear-gradient(135deg, #ffe2bd 0%, #F2A25A 55%, #FF8A4C 100%);
+    box-shadow:0 0 0 5px rgba(255,210,160,0.12), 0 18px 40px -12px rgba(255,138,76,0.55);
+  }
+  .monogram[hidden]{ display:none; }
+  .monogram::after{ content:""; position:absolute; inset:-10px; border-radius:50%; border:1px solid var(--line); pointer-events:none; }
+
+  h1{
+    position:relative; font-family:var(--serif); font-weight:400; font-size:34px; line-height:1.06;
+    text-align:center; margin:0 0 10px; letter-spacing:-0.01em;
+    background:linear-gradient(100deg, var(--h1-a) 30%, var(--h1-b) 75%, var(--h1-c));
+    -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent;
+  }
+  .role{ position:relative; text-align:center; font-size:13.5px; line-height:1.5; color:var(--text-dim); margin:0 auto 6px; max-width:32ch; }
+  .role b{ color:var(--text); font-weight:600; }
+  .company{ position:relative; text-align:center; font-size:12.5px; line-height:1.5; color:var(--accent); margin:0 auto 16px; max-width:36ch; }
+  .bio{ position:relative; text-align:center; font-size:14px; line-height:1.6; color:var(--text); margin:0 auto 20px; max-width:34ch; }
+  .bio:empty,.company:empty{ display:none; }
+
+  .chips{ position:relative; list-style:none; padding:0; margin:0 0 22px; display:flex; flex-wrap:wrap; justify-content:center; gap:7px; }
+  .chips li{ font-size:11.5px; color:var(--text); padding:6px 11px; border-radius:999px; background:linear-gradient(180deg, var(--chip-a), var(--chip-b)); border:1px solid var(--line-soft); }
+  .cred{ position:relative; display:flex; justify-content:center; margin:-12px auto 22px; }
+  .cred[hidden]{ display:none; }
+  .cred span{ display:inline-flex; align-items:center; gap:9px; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); padding:7px 15px; border:1px solid var(--line); border-radius:999px; background:var(--chip-b); }
+  .cred span::before{ content:""; width:5px; height:5px; border-radius:50%; background:var(--accent); box-shadow:0 0 9px var(--accent); }
+
+  .proof{ position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:0 0 22px; }
+  .proof:empty{ display:none; }
+  .proof div{ text-align:center; padding:11px 6px; border-radius:13px; border:1px solid var(--line-soft); background:var(--surface); }
+  .proof b{ display:block; font-family:var(--serif); font-weight:400; font-size:15px; color:var(--accent); margin-bottom:3px; }
+  .proof span{ display:block; font-size:10.5px; line-height:1.35; color:var(--text-dim); }
+
+  .save,.book{
+    position:relative; width:100%; cursor:pointer; font-family:var(--sans); font-size:15px; font-weight:650; letter-spacing:0.01em;
+    min-height:52px; padding:16px 18px; border-radius:var(--r);
+    display:flex; align-items:center; justify-content:center; gap:10px; text-decoration:none;
+    transition:transform .12s ease, box-shadow .2s ease, filter .2s ease, background .18s ease;
+  }
+  .save{ border:0; color:#2a1706; background:linear-gradient(135deg, #ffe0b8 0%, #FFD2A0 35%, #F2A25A 100%); box-shadow:0 14px 34px -12px rgba(255,138,76,0.55); }
+  .save:hover{ filter:brightness(1.03); }
+  .book{ margin-top:8px; color:var(--accent); border:1px solid var(--accent-deep); background:var(--chip-b); }
+  .book:hover{ background:var(--surface-hover); }
+  .book[hidden],.cv[hidden]{ display:none; }
+  .save:active,.book:active{ transform:translateY(1px) scale(0.995); }
+  .save svg,.book svg{ width:18px; height:18px; }
+
+  .actions{ position:relative; display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  .actions[hidden]{ display:none; }
+  .actions button,.cv{
+    display:flex; align-items:center; justify-content:center; gap:8px; padding:13px 10px; min-height:48px; border-radius:13px;
+    border:1px solid var(--line); background:var(--surface); color:var(--text);
+    font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.01em; cursor:pointer; text-decoration:none;
+    transition:background .18s ease, border-color .18s ease, transform .12s ease;
+  }
+  .cv{ position:relative; margin-top:8px; width:100%; }
+  .actions button:active,.cv:active{ transform:translateY(1px); }
+  .actions button:hover,.cv:hover{ background:var(--surface-hover); }
+  .actions svg,.cv svg{ width:17px; height:17px; color:var(--accent); }
+
+  .quick{ position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:8px; }
+  .quick a{ display:flex; flex-direction:column; align-items:center; gap:6px; padding:13px 6px; border-radius:13px; border:1px solid var(--line); background:var(--surface); color:var(--text); text-decoration:none; font-size:11.5px; letter-spacing:0.02em; transition:background .18s ease, transform .12s ease; }
+  .quick a:active{ transform:translateY(1px); }
+  .quick a:hover{ background:var(--surface-hover); }
+  .quick svg{ width:19px; height:19px; color:var(--accent); }
+
+  .sep{ position:relative; display:flex; align-items:center; gap:12px; margin:26px 2px 14px; color:var(--accent); font-size:10.5px; letter-spacing:0.26em; text-transform:uppercase; opacity:0.85; }
+  .sep::before,.sep::after{ content:""; height:1px; flex:1; background:var(--line-soft); }
+  .sep[hidden],.services[hidden],.work[hidden],.video[hidden]{ display:none; }
+
+  .services{ position:relative; display:flex; flex-direction:column; gap:8px; }
+  .service{
+    display:flex; gap:14px; align-items:flex-start; padding:14px 15px; border-radius:14px;
+    border:1px solid var(--line-soft); background:var(--surface); color:var(--text); text-decoration:none;
+    transition:background .18s ease, border-color .18s ease, transform .12s ease;
+  }
+  .service:hover{ background:var(--surface-hover); border-color:var(--line); }
+  .service:active{ transform:translateY(1px); }
+  .service .ic{ width:22px; height:22px; flex:none; color:var(--accent); margin-top:1px; }
+  .service .ic svg{ width:22px; height:22px; }
+  .service .name{ font-size:14px; font-weight:600; margin-bottom:2px; }
+  .service .sub{ font-size:12.5px; line-height:1.45; color:var(--text-dim); }
+  .service .go{ margin-left:auto; color:var(--accent); opacity:.55; align-self:center; }
+  .service .go svg{ width:16px; height:16px; }
+
+  /* latest video tile */
+  .video{ position:relative; display:block; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:var(--surface); color:var(--text); text-decoration:none; }
+  .video .thumb{ position:relative; aspect-ratio:16/9; background:#0a201f center/cover no-repeat; }
+  .video .thumb::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, rgba(0,0,0,.45)); }
+  .video .play{ position:absolute; z-index:1; left:50%; top:50%; width:54px; height:54px; transform:translate(-50%,-50%); border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,#ffe0b8,#F2A25A); box-shadow:0 10px 30px -8px rgba(0,0,0,.6); }
+  .video .play svg{ width:22px; height:22px; color:#2a1706; margin-left:3px; }
+  .video .meta{ padding:12px 14px 14px; }
+  .video .meta .tag{ font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:4px; }
+  .video .meta .ttl{ font-size:14px; font-weight:600; line-height:1.35; }
+  .video.skeleton .thumb{ background:linear-gradient(110deg, rgba(255,255,255,.04) 30%, rgba(255,255,255,.1) 50%, rgba(255,255,255,.04) 70%); background-size:200% 100%; animation:shimmer 1.4s linear infinite; }
+  @keyframes shimmer{ to{ background-position:-200% 0; } }
+
+  .socials,.work{ position:relative; display:flex; flex-direction:column; gap:8px; }
+  .social{
+    display:flex; align-items:center; gap:14px; padding:14px 15px; min-height:56px; border-radius:14px;
+    border:1px solid var(--line-soft); background:var(--surface); color:var(--text); text-decoration:none;
+    transition:background .18s ease, border-color .18s ease, transform .12s ease;
+  }
+  .social:active{ transform:translateY(1px); }
+  .social:hover{ background:var(--surface-hover); border-color:var(--line); }
+  .social .ic{ width:22px; height:22px; flex:none; color:var(--accent); display:grid; place-items:center; }
+  .social .ic svg{ width:20px; height:20px; }
+  .social .tx{ display:flex; flex-direction:column; line-height:1.25; }
+  .social .tx .name{ font-size:14px; font-weight:600; }
+  .social .tx .sub{ font-size:12px; color:var(--text-dim); }
+  .social .go{ margin-left:auto; color:var(--accent); opacity:0.55; }
+  .social .go svg{ width:16px; height:16px; }
+
+  footer{ position:relative; margin-top:24px; text-align:center; font-size:11px; line-height:1.6; letter-spacing:0.04em; color:var(--text-dim); }
+
+  #qrModal{ position:fixed; inset:0; z-index:60; display:none; align-items:center; justify-content:center; padding:24px; background:rgba(6,22,21,0.72); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); }
+  #qrModal.show{ display:flex; }
+  #qrModal .sheet{ background:var(--sheet-bg); border-radius:22px; padding:22px 22px 18px; max-width:320px; width:100%; text-align:center; box-shadow:0 30px 70px -20px rgba(0,0,0,0.7); }
+  #qrModal .sheet h3{ margin:0 0 4px; font-family:var(--serif); font-weight:400; font-size:20px; color:var(--sheet-text); }
+  #qrModal .sheet p{ margin:0 0 14px; font-size:12px; color:var(--sheet-sub); word-break:break-all; }
+  #qrModal .qrbox svg{ width:100%; height:auto; display:block; border-radius:10px; }
+  #qrModal .close{ margin-top:14px; width:100%; border:0; border-radius:12px; cursor:pointer; padding:11px; font-family:var(--sans); font-size:13px; font-weight:650; color:#f6efe3; background:#0b3d2e; }
+
+  #toast{ position:fixed; left:50%; bottom:24px; transform:translate(-50%, 20px); background:var(--toast-bg); color:#f6efe3; border:1px solid var(--line); padding:12px 16px; border-radius:12px; font-size:13px; max-width:88vw; box-shadow:0 20px 50px -20px rgba(0,0,0,0.7); opacity:0; pointer-events:none; transition:opacity .22s ease, transform .22s ease; z-index:70; }
+  #toast.show{ opacity:1; transform:translate(-50%, 0); }
+
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{ opacity:0; transform:translateY(10px); animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards; }
+    @keyframes rise{ to{ opacity:1; transform:none; } }
+    .card::before{ animation:glow 14s ease-in-out infinite alternate; }
+  }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:8px; }
+</style>
+</head>
+<body>
+  <main class="card" id="card">
+    <div class="toolbar">
+      <button class="iconbtn install" id="installBtn" type="button" data-evt="install_tap" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+        <span id="installLabel">Install</span>
+      </button>
+      <div class="tb-right">
+        <div class="pill" id="langPill" role="group" aria-label="Language"></div>
+        <button class="iconbtn" id="themeBtn" type="button" aria-label="Toggle theme">
+          <svg id="icoMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg id="icoSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="portrait reveal" id="portrait" hidden></div>
+    <div class="monogram reveal" id="monogram" aria-hidden="true">KC</div>
+    <p class="eyebrow reveal" id="eyebrow">Lagos · Nigeria</p>
+    <h1 class="reveal" id="name">KC Nduaguba</h1>
+    <p class="role reveal" id="role"><b>AI Automation Engineer</b> · Full-Stack Developer · Educator</p>
+    <p class="company reveal" id="company"></p>
+    <p class="bio reveal" id="bio"></p>
+    <ul class="chips reveal" id="chips" aria-label="Skills"></ul>
+    <div class="cred reveal" id="cred" hidden></div>
+    <div class="proof reveal" id="proof"></div>
+
+    <button class="save reveal" id="saveBtn" type="button" data-evt="save">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span id="saveLabel">Save my contact</span>
+    </button>
+    <a class="book reveal" id="bookBtn" href="#" target="_blank" rel="noopener" data-evt="book" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <span id="bookLabel">Book a free call</span>
+    </a>
+
+    <div class="actions reveal" id="actions">
+      <button id="shareBtn" type="button" data-evt="share">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span id="shareLabel">Share</span>
+      </button>
+      <button id="qrBtn" type="button" data-evt="qr">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v.01M14 21h.01M17 21h4v-4"/></svg>
+        <span>QR</span>
+      </button>
+    </div>
+
+    <a class="cv reveal" id="cvBtn" href="#" download data-evt="cv" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+      <span id="cvLabel">Download my CV</span>
+    </a>
+
+    <div class="quick reveal" id="quick"></div>
+
+    <div class="sep reveal" id="videoSep" hidden></div>
+    <a class="video reveal skeleton" id="video" href="#" target="_blank" rel="noopener" data-evt="video" hidden>
+      <div class="thumb" id="vThumb"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+      <div class="meta"><div class="tag" id="vTag"></div><div class="ttl" id="vTitle"></div></div>
+    </a>
+
+    <div class="sep reveal" id="servicesSep"></div>
+    <section class="services reveal" id="services" aria-label="Services"></section>
+
+    <div class="sep reveal" id="workSep"></div>
+    <nav class="work reveal" id="work" aria-label="Featured work"></nav>
+
+    <div class="sep reveal" id="followSep"></div>
+    <nav class="socials reveal" id="socials" aria-label="Social profiles"></nav>
+
+    <footer class="reveal" id="footer"></footer>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <div id="qrModal" aria-hidden="true">
+    <div class="sheet">
+      <h3 id="qrTitle">Scan to connect</h3>
+      <p id="qrUrl"></p>
+      <div class="qrbox" id="qrbox"></div>
+      <button class="close" id="qrClose" type="button">Done</button>
+    </div>
+  </div>
+
+<!-- QR generator (MIT, Kazuhiko Arase) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+
+<script>
+/* =========================================================================
+   EDIT ONLY THIS BLOCK. Anything left blank ("" or []) simply won't show.
+   Items marked TODO need your real details.
+   ========================================================================= */
+const CONFIG = {
+  firstName: "KC",
+  lastName:  "Nduaguba",
+  fullName:  "KC Nduaguba",
+  initials:  "KC",
+
+  portrait: { video:"", poster:"", image:"portrait.jpg" },   // falls back to monogram if missing
+
+  showShare: true,
+  showQR:    true,
+
+  tags: ["n8n", "AI Agents", "Python", "FastAPI", "Next.js", "Supabase"],
+
+  org:   "KCEMMA HUB",
+  title: "AI Automation Engineer & Full-Stack Developer",
+  note:  "AI Automation Engineer & Full-Stack Developer. n8n workflows, AI agents and web apps. Based in Lagos, Nigeria.",
+
+  phone:    "+2348120026492",
+  whatsapp: "2348120026492",
+  email:    "nduagubaemma@gmail.com",        // TODO: swap for hello@yourdomain.com
+  website:  "https://portfolio-jbal.vercel.app",
+
+  bookingUrl: "https://cal.com/YOUR-USERNAME/intro",   // TODO: real booking link ("" hides the button)
+  cvUrl:      "cv.pdf",                                // put cv.pdf next to index.html ("" hides the button)
+
+  // Latest YouTube video tile (reads your channel's public feed; falls back to a link to the channel)
+  youtube: { channelId: "UCXGSRp2ckE3wpC4x6yy7xew", channelUrl: "https://www.youtube.com/@KcEmma" },
+
+  location: { city:"Lagos", region:"", country:"Nigeria", tz:"Africa/Lagos" },
+
+  quickActions: ["whatsapp", "call", "email"],
+
+  serviceIcons: ["flow", "bot", "code"],
+
+  featuredUrls: ["https://portfolio-jbal.vercel.app", "https://www.youtube.com/@KcEmma", "https://github.com/nduprincekc"],
+
+  socials: [
+    { key:"youtube",  name:"YouTube",  sub:"@KcEmma",     url:"https://www.youtube.com/@KcEmma" },
+    { key:"linkedin", name:"LinkedIn", sub:"KC Nduaguba", url:"https://www.linkedin.com/in/kcemma" },
+    { key:"github",   name:"GitHub",   sub:"nduprincekc", url:"https://github.com/nduprincekc" },
+    { key:"x",        name:"X",        sub:"@nduagubakc", url:"https://x.com/nduagubakc" },
+  ],
+
+  languages: ["en", "fr", "ig"],   // order shown in the switcher
+
+  // Analytics. Events are sent to BOTH if set:
+  //  - Plausible (privacy-friendly): set your domain, e.g. "card.yourdomain.com"
+  //  - Your own n8n webhook (feeds stats.html): POST endpoint URL
+  plausibleDomain: "",
+  trackUrl: "",    // TODO: n8n webhook (POST) that appends a row per event
+
+  rcNumber: "RC 9602233",
+};
+
+/* =========================================================================
+   TRANSLATIONS — edit wording here. (Igbo: have a native speaker review.)
+   ========================================================================= */
+const LANG = {
+  en: {
+    label:"EN",
+    role:"<b>AI Automation Engineer</b> · Full-Stack Developer · Educator",
+    company:"Tecnotree · Founder, KCEMMA HUB",
+    bio:"I build n8n workflows and AI agents that take repetitive work off your team's plate.",
+    credential:"AI Automation",
+    proof:[ ["Tecnotree","Enterprise telecom automation"], ["KCEMMA HUB","Automation studio · RC 9602233"], ["Educator","Teaching AI & automation"] ],
+    save:"Save my contact", book:"Book a free call", share:"Share", cv:"Download my CV",
+    call:"Call", email:"Email", whatsapp:"WhatsApp",
+    videoSep:"Latest video", videoTag:"Latest on YouTube", videoFallbackTitle:"Watch my automation tutorials",
+    servicesSep:"What I do", workSep:"Featured work", followSep:"Follow along",
+    services:[
+      ["n8n workflow automation","Lead capture, CRM sync, reporting and back-office flows that run on autopilot.","n8n workflow automation"],
+      ["AI agents & chatbots","WhatsApp, Telegram and web assistants wired to your data and tools.","an AI agent or chatbot"],
+      ["Full-stack web apps","Dashboards, SaaS tools and internal apps built with Next.js, FastAPI and Supabase.","a web app"],
+    ],
+    featured:[ ["Portfolio & case studies","Selected projects and results"], ["Automation tutorials","Watch builds on YouTube"], ["Open-source projects","Code and templates on GitHub"] ],
+    footer:"{rc}<br>Great to meet you — let's build something.",
+    waDefault:"Hi KC, I found your card and I'd like to talk about…",
+    waTopic:"Hi KC, I found your card and I'd like to talk about {topic}.",
+    qrTitle:"Scan to connect", done:"Done", install:"Install", installIos:"On iPhone: tap Share, then “Add to Home Screen”.",
+    tSaved:"Contact card downloaded — open it to add me.", tSaveFail:"Could not download. Try the call or email button instead.",
+    tCopied:"Link copied to clipboard.", qrOffline:"QR unavailable offline — use Share instead.",
+    themeLabel:"Toggle theme",
+  },
+  fr: {
+    label:"FR",
+    role:"<b>Ingénieur en automatisation IA</b> · Développeur Full-Stack · Formateur",
+    company:"Tecnotree · Fondateur, KCEMMA HUB",
+    bio:"Je conçois des workflows n8n et des agents IA qui suppriment les tâches répétitives de votre équipe.",
+    credential:"Automatisation IA",
+    proof:[ ["Tecnotree","Automatisation télécom grands comptes"], ["KCEMMA HUB","Studio d'automatisation · RC 9602233"], ["Formateur","Enseigne l'IA et l'automatisation"] ],
+    save:"Enregistrer mon contact", book:"Réserver un appel gratuit", share:"Partager", cv:"Télécharger mon CV",
+    call:"Appeler", email:"E-mail", whatsapp:"WhatsApp",
+    videoSep:"Dernière vidéo", videoTag:"Dernière vidéo YouTube", videoFallbackTitle:"Regardez mes tutoriels d'automatisation",
+    servicesSep:"Ce que je fais", workSep:"Réalisations", followSep:"Suivez-moi",
+    services:[
+      ["Automatisation de workflows n8n","Capture de leads, synchro CRM, reporting et processus internes en pilote automatique.","l'automatisation de workflows n8n"],
+      ["Agents IA et chatbots","Assistants WhatsApp, Telegram et web connectés à vos données et outils.","un agent IA ou un chatbot"],
+      ["Applications web full-stack","Tableaux de bord, outils SaaS et applis internes avec Next.js, FastAPI et Supabase.","une application web"],
+    ],
+    featured:[ ["Portfolio et études de cas","Projets et résultats choisis"], ["Tutoriels d'automatisation","Voir les démos sur YouTube"], ["Projets open source","Code et modèles sur GitHub"] ],
+    footer:"{rc}<br>Ravi de vous rencontrer — construisons quelque chose.",
+    waDefault:"Bonjour KC, j'ai trouvé votre carte et j'aimerais discuter de…",
+    waTopic:"Bonjour KC, j'ai trouvé votre carte et j'aimerais discuter de {topic}.",
+    qrTitle:"Scannez pour me contacter", done:"Fermer", install:"Installer", installIos:"Sur iPhone : touchez Partager, puis « Sur l'écran d'accueil ».",
+    tSaved:"Fiche contact téléchargée — ouvrez-la pour m'ajouter.", tSaveFail:"Téléchargement impossible. Essayez l'appel ou l'e-mail.",
+    tCopied:"Lien copié dans le presse-papiers.", qrOffline:"QR indisponible hors ligne — utilisez Partager.",
+    themeLabel:"Changer le thème",
+  },
+  ig: {
+    label:"IG",
+    role:"<b>Injinia AI Automation</b> · Onye Full-Stack Developer · Onye nkụzi",
+    company:"Tecnotree · Onye guzobere KCEMMA HUB",
+    bio:"Ana m arụ n8n workflows na AI agents na-eme ka ọrụ a na-emegharị emegharị dị mfe maka otu gị.",
+    credential:"AI Automation",
+    proof:[ ["Tecnotree","Automation maka ụlọ ọrụ telecom ukwu"], ["KCEMMA HUB","Studio automation · RC 9602233"], ["Onye nkụzi","Na-akụzi AI na automation"] ],
+    save:"Debe kọntaktị m", book:"Debanye oge maka oku n'efu", share:"Kesaa", cv:"Budata CV m",
+    call:"Kpọọ", email:"Email", whatsapp:"WhatsApp",
+    videoSep:"Vidiyo kacha ọhụrụ", videoTag:"Kacha ọhụrụ na YouTube", videoFallbackTitle:"Lelee ntuziaka automation m",
+    servicesSep:"Ihe m na-arụ", workSep:"Ọrụ a họpụtara", followSep:"Soro m",
+    services:[
+      ["n8n workflow automation","Ịnata ndị ahịa, CRM sync, akụkọ na ọrụ n'ime ụlọ ọrụ na-aga n'onwe ha.","n8n workflow automation"],
+      ["AI agents na chatbots","WhatsApp, Telegram na web assistants jikọtara na data na ngwaọrụ gị.","AI agent ma ọ bụ chatbot"],
+      ["Web apps full-stack","Dashboards, SaaS tools na apps ụlọ ọrụ site na Next.js, FastAPI na Supabase.","web app"],
+    ],
+    featured:[ ["Portfolio na case studies","Ọrụ na nsonaazụ ndị a họpụtara"], ["Ntuziaka automation","Lelee ha na YouTube"], ["Open-source projects","Koodu na templates na GitHub"] ],
+    footer:"{rc}<br>Obi dị m ụtọ izute gị — ka anyị wuo ihe.",
+    waDefault:"Ndewo KC, ahụrụ m kaadị gị ma achọrọ m ịkpaa ha banyere…",
+    waTopic:"Ndewo KC, ahụrụ m kaadị gị ma achọrọ m ịkpaa ha banyere {topic}.",
+    qrTitle:"Nyocha ka ịkpọtụrụ m", done:"Emechala", install:"Wụnye", installIos:"Na iPhone: pịa Share, wee họrọ “Add to Home Screen”.",
+    tSaved:"Ekweta kaadị kọntaktị — mepee ya ka ịtinye m.", tSaveFail:"Enweghị ike ibudata. Nwaa oku ma ọ bụ email.",
+    tCopied:"Edepụtara njikọ.", qrOffline:"QR adịghị n'enweghị ịntanet — jiri Kesaa.",
+    themeLabel:"Gbanwee tiimu",
+  },
+};
+/* ===================== stop editing here ===================== */
+
+
+/* ---- Icons ---- */
+const ICONS = {
+  phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>',
+  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+  whatsapp:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.18-1.36a9.9 9.9 0 0 0 4.85 1.24h.01c5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.04-5.16-2.92-7.04A9.9 9.9 0 0 0 12.04 2Zm0 1.82c2.18 0 4.23.85 5.77 2.39a8.1 8.1 0 0 1 2.39 5.76c0 4.5-3.66 8.14-8.16 8.14a8.2 8.2 0 0 1-4.16-1.14l-.3-.18-3.07.8.82-3-.2-.31a8.07 8.07 0 0 1-1.25-4.31c0-4.5 3.66-8.14 8.16-8.14Zm-2.6 4.38c-.14 0-.36.05-.56.27-.19.21-.73.71-.73 1.74s.75 2.02.85 2.16c.11.14 1.45 2.3 3.58 3.16 1.77.72 2.13.58 2.52.54.39-.03 1.24-.5 1.42-1 .18-.49.18-.9.12-1-.05-.09-.19-.14-.4-.25-.21-.1-1.24-.61-1.43-.68-.19-.07-.33-.1-.47.11-.14.21-.54.68-.66.82-.12.14-.24.16-.45.05-.21-.11-.88-.32-1.68-1.04-.62-.55-1.04-1.23-1.16-1.44-.12-.21-.01-.32.09-.43.09-.09.21-.24.32-.36.1-.12.14-.21.21-.35.07-.14.03-.27-.02-.38-.05-.1-.46-1.13-.64-1.55-.17-.41-.34-.35-.47-.36l-.4-.01Z"/></svg>',
+  globe:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
+  youtube:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12Zm-13 3.2V8.8l5.5 3.2-5.5 3.2Z"/></svg>',
+  x:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2.5h3.3l-7.2 8.2 8.5 11.3h-6.7l-5.2-6.9-6 6.9H1.6l7.7-8.8L1 2.5h6.9l4.7 6.3 5.6-6.3Zm-1.2 17.8h1.8L7.1 4.3H5.2L17 20.3Z"/></svg>',
+  github:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>',
+  linkedin:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 5.9V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9V9Z"/></svg>',
+  flow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="5" cy="18" r="2.5"/><path d="M7.5 6H12a3 3 0 0 1 3 3v0a3 3 0 0 0 1.5 2.6M7.5 18H12a3 3 0 0 0 3-3v0a3 3 0 0 1 1.5-2.6"/></svg>',
+  bot:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 13v1M15 13v1M9.5 17h5M2 13v3M22 13v3"/><circle cx="12" cy="3.5" r="1"/></svg>',
+  code:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>',
+};
+const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+
+const esc = s => String(s).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+const $ = id => document.getElementById(id);
+const params = new URLSearchParams(location.search);
+const SRC = (params.get('src') || '').slice(0, 40);
+
+/* ---- Storage helpers (safe when blocked) ---- */
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} },
+};
+
+/* ---- Language ---- */
+function detectLang(){
+  const ok = CONFIG.languages.filter(l => LANG[l]);
+  const q = params.get('lang'); if (q && ok.includes(q)) return q;
+  const s = store.get('kc-lang'); if (s && ok.includes(s)) return s;
+  const n = (navigator.language || 'en').slice(0,2).toLowerCase();
+  return ok.includes(n) ? n : ok[0];
+}
+let lang = detectLang();
+const t = () => LANG[lang];
+
+/* ---- Tracking (Plausible + optional own webhook) ---- */
+(function(){
+  window.plausible = window.plausible || function(){ (window.plausible.q = window.plausible.q || []).push(arguments); };
+  if (!CONFIG.plausibleDomain) return;
+  const s = document.createElement('script');
+  s.defer = true; s.dataset.domain = CONFIG.plausibleDomain; s.src = 'https://plausible.io/js/script.js';
+  document.head.appendChild(s);
+})();
+function track(event, extra){
+  try{ window.plausible(event); }catch(e){}
+  if (!CONFIG.trackUrl) return;
+  try{
+    const body = JSON.stringify({ event, src: SRC, lang, ts: new Date().toISOString(), detail: extra || '' });
+    if (navigator.sendBeacon) navigator.sendBeacon(CONFIG.trackUrl, new Blob([body], { type:'text/plain' }));
+    else fetch(CONFIG.trackUrl, { method:'POST', body, keepalive:true, mode:'no-cors' });
+  }catch(e){}
+}
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-evt]');
+  if (el) track(el.dataset.evt, el.dataset.detail);
+});
+track('view');
+
+/* ---- Theme ---- */
+function applyTheme(th){
+  document.documentElement.dataset.theme = th;
+  $('themeColor').setAttribute('content', th === 'light' ? '#f6efe3' : '#06231b');
+  store.set('kc-theme', th);
+}
+$('themeBtn').addEventListener('click', () => {
+  applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
+  track('theme');
+});
+
+/* ---- WhatsApp smart links ---- */
+const waLink = text => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text + (SRC ? ` [${SRC}]` : ''))}`;
+
+function resolveAction(key){
+  const T = t();
+  if (key==='call'     && CONFIG.phone)    return {ic:'phone',    label:T.call,     href:'tel:'+CONFIG.phone.replace(/\s/g,''), evt:'call'};
+  if (key==='whatsapp' && CONFIG.whatsapp) return {ic:'whatsapp', label:T.whatsapp, href:waLink(T.waDefault), evt:'whatsapp'};
+  if (key==='email'    && CONFIG.email)    return {ic:'mail',     label:T.email,    href:'mailto:'+CONFIG.email, evt:'email'};
+  const s = CONFIG.socials.find(x => x.key===key && x.url && x.url.trim());
+  return s ? {ic:s.key, label:s.name, href:s.url, evt:key} : null;
+}
+
+function linkRow(href, iconSvg, name, sub, evt, detail){
+  return `<a class="social" href="${esc(href)}" target="_blank" rel="noopener" data-evt="${esc(evt)}" data-detail="${esc(detail||'')}">
+      <span class="ic">${iconSvg}</span>
+      <span class="tx"><span class="name">${esc(name)}</span><span class="sub">${esc(sub||'')}</span></span>
+      <span class="go">${ARROW}</span></a>`;
+}
+
+/* ---- Render (called on load and on every language change) ---- */
+function render(){
+  const T = t();
+  document.documentElement.lang = lang;
+
+  $('role').innerHTML = T.role;
+  $('company').textContent = T.company || '';
+  $('bio').textContent = T.bio || '';
+  $('proof').innerHTML = (T.proof||[]).map(p => `<div><b>${esc(p[0])}</b><span>${esc(p[1])}</span></div>`).join('');
+
+  const credEl = $('cred');
+  if (T.credential){ credEl.innerHTML = `<span>${esc(T.credential)}</span>`; credEl.hidden = false; } else credEl.hidden = true;
+
+  $('saveLabel').textContent = T.save;
+  $('shareLabel').textContent = T.share;
+  $('cvLabel').textContent = T.cv;
+  $('installLabel').textContent = T.install;
+  $('themeBtn').setAttribute('aria-label', T.themeLabel);
+  $('qrTitle').textContent = T.qrTitle;
+  $('qrClose').textContent = T.done;
+
+  if (CONFIG.bookingUrl && CONFIG.bookingUrl.trim()){
+    $('bookBtn').href = CONFIG.bookingUrl; $('bookLabel').textContent = T.book; $('bookBtn').hidden = false;
+  }
+  if (CONFIG.cvUrl && CONFIG.cvUrl.trim()){
+    $('cvBtn').href = CONFIG.cvUrl; $('cvBtn').setAttribute('download', `${CONFIG.fullName} CV.pdf`); $('cvBtn').hidden = false;
+  }
+
+  $('quick').innerHTML = (CONFIG.quickActions||[]).map(resolveAction).filter(Boolean).map(q =>
+    `<a href="${esc(q.href)}" ${q.href.startsWith('http') ? 'target="_blank" rel="noopener"' : ''} data-evt="${esc(q.evt)}">${ICONS[q.ic] || ICONS.globe}<span>${esc(q.label)}</span></a>`
+  ).join('');
+
+  // Services — each opens WhatsApp with a topic-specific pre-filled message
+  $('servicesSep').textContent = T.servicesSep;
+  $('services').innerHTML = T.services.map((s, i) => {
+    const href = CONFIG.whatsapp ? waLink(T.waTopic.replace('{topic}', s[2])) : '#';
+    return `<a class="service" href="${esc(href)}" target="_blank" rel="noopener" data-evt="service" data-detail="${esc(s[2])}">
+      <span class="ic">${ICONS[CONFIG.serviceIcons[i]] || ICONS.globe}</span>
+      <div><div class="name">${esc(s[0])}</div><div class="sub">${esc(s[1])}</div></div>
+      <span class="go">${ARROW}</span></a>`;
+  }).join('');
+
+  // Featured work
+  $('workSep').textContent = T.workSep;
+  const feat = T.featured.map((f, i) => ({ title:f[0], sub:f[1], url:CONFIG.featuredUrls[i] })).filter(f => f.url);
+  $('work').hidden = $('workSep').hidden = !feat.length;
+  $('work').innerHTML = feat.map(f => linkRow(f.url, ICONS.globe, f.title, f.sub, 'work', f.title)).join('');
+
+  // Socials
+  $('followSep').textContent = T.followSep;
+  $('socials').innerHTML = CONFIG.socials.filter(s => s.url && s.url.trim())
+    .map(s => linkRow(s.url, ICONS[s.key] || ICONS.globe, s.name, s.sub, 'social', s.name)).join('');
+
+  $('footer').innerHTML = T.footer.replace('{rc}', esc(CONFIG.rcNumber || ''));
+
+  // Video tile text
+  $('videoSep').textContent = T.videoSep;
+  $('vTag').textContent = T.videoTag;
+  if (!videoState.title) $('vTitle').textContent = T.videoFallbackTitle;
+
+  // Language pill
+  $('langPill').innerHTML = CONFIG.languages.filter(l => LANG[l]).map(l =>
+    `<button type="button" data-lang="${l}" aria-pressed="${l === lang}" aria-label="${LANG[l].label}">${LANG[l].label}</button>`).join('');
+}
+$('langPill').addEventListener('click', e => {
+  const b = e.target.closest('[data-lang]');
+  if (!b || b.dataset.lang === lang) return;
+  lang = b.dataset.lang; store.set('kc-lang', lang); track('lang', lang); render();
+});
+
+/* ---- Static bits (don't change with language) ---- */
+$('monogram').textContent = CONFIG.initials || (CONFIG.firstName[0] + CONFIG.lastName[0]);
+$('name').textContent = CONFIG.fullName;
+$('chips').innerHTML = (CONFIG.tags||[]).map(x => `<li>${esc(x)}</li>`).join('');
+(function(){
+  const el = $('eyebrow'), city = CONFIG.location.city;
+  function tick(){
+    let tm = '';
+    try{ tm = new Date().toLocaleTimeString([], { hour:'numeric', minute:'2-digit', timeZone: CONFIG.location.tz }); }catch(e){}
+    el.textContent = [city, tm].filter(Boolean).join(' · ');
+  }
+  tick(); setInterval(tick, 30000);
+})();
+
+/* ---- Latest YouTube video ---- */
+const videoState = { title:'' };
+(function(){
+  const yt = CONFIG.youtube || {};
+  const tile = $('video');
+  if (!yt.channelUrl && !yt.channelId){ return; }
+  tile.hidden = false; $('videoSep').hidden = false;
+  tile.href = yt.channelUrl || `https://www.youtube.com/channel/${yt.channelId}`;
+  if (!yt.channelId){ tile.classList.remove('skeleton'); return; }
+  const feed = `https://www.youtube.com/feeds/videos.xml?channel_id=${yt.channelId}`;
+  const api  = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed)}`;
+  const ctl = new AbortController(); setTimeout(() => ctl.abort(), 6000);
+  fetch(api, { signal: ctl.signal }).then(r => r.json()).then(d => {
+    const it = d && d.items && d.items[0];
+    if (!it) throw new Error('no items');
+    const id = (it.guid || '').split(':').pop() || (it.link.match(/v=([\w-]{11})/) || [])[1];
+    tile.href = it.link || `https://www.youtube.com/watch?v=${id}`;
+    if (id) $('vThumb').style.backgroundImage = `url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`;
+    videoState.title = it.title; $('vTitle').textContent = it.title;
+  }).catch(() => {}).finally(() => tile.classList.remove('skeleton'));
+})();
+
+/* ---- Portrait with graceful fallback ---- */
+(function(){
+  const p = CONFIG.portrait || {}, el = $('portrait'), mono = $('monogram');
+  const src = p.video || p.image;
+  if (!src) return;
+  function showMono(){ el.hidden = true; el.innerHTML = ''; mono.hidden = false; $('card').classList.remove('has-portrait'); }
+  function showPortrait(){ el.hidden = false; mono.hidden = true; $('card').classList.add('has-portrait'); }
+  let node;
+  if (p.video){
+    node = document.createElement('video');
+    node.src = p.video; if (p.poster) node.poster = p.poster;
+    node.autoplay = true; node.muted = true; node.loop = true; node.playsInline = true;
+    node.addEventListener('loadeddata', showPortrait);
+  } else {
+    node = document.createElement('img'); node.alt = CONFIG.fullName;
+    node.addEventListener('load', showPortrait); node.src = p.image;
+  }
+  node.addEventListener('error', showMono);
+  el.appendChild(node);
+})();
+
+/* ---- vCard ---- */
+const vEsc = s => String(s||'').replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');
+function fold(line){
+  if (line.length <= 74) return line;
+  const out = [line.slice(0,75)];
+  for (let i = 75; i < line.length; i += 74) out.push(' ' + line.slice(i, i + 74));
+  return out.join('\r\n');
+}
+function getPhotoB64(){
+  return new Promise(resolve => {
+    const src = CONFIG.portrait && CONFIG.portrait.image;
+    if (!src) return resolve('');
+    const img = new Image();
+    img.onload = () => {
+      try{
+        const size = 256, c = document.createElement('canvas'); c.width = c.height = size;
+        const s = Math.min(img.width, img.height);
+        c.getContext('2d').drawImage(img, (img.width - s)/2, Math.max(0,(img.height - s)*0.2), s, s, 0, 0, size, size);
+        resolve(c.toDataURL('image/jpeg', 0.82).split(',')[1] || '');
+      }catch(e){ resolve(''); }
+    };
+    img.onerror = () => resolve(''); img.src = src;
+  });
+}
+async function buildVCard(){
+  const L = CONFIG.location, photo = await getPhotoB64();
+  const lines = [
+    'BEGIN:VCARD', 'VERSION:3.0',
+    `N:${vEsc(CONFIG.lastName)};${vEsc(CONFIG.firstName)};;;`,
+    `FN:${vEsc(CONFIG.fullName)}`,
+    CONFIG.org ? `ORG:${vEsc(CONFIG.org)}` : '',
+    CONFIG.title ? `TITLE:${vEsc(CONFIG.title)}` : '',
+    CONFIG.phone ? `TEL;TYPE=CELL,VOICE:${CONFIG.phone}` : '',
+    CONFIG.email ? `EMAIL;TYPE=INTERNET,WORK:${CONFIG.email}` : '',
+    CONFIG.website ? `URL:${CONFIG.website}` : '',
+    `ADR;TYPE=WORK:;;;${vEsc(L.city)};${vEsc(L.region)};;${vEsc(L.country)}`,
+    CONFIG.note ? `NOTE:${vEsc(CONFIG.note)}` : '',
+    photo ? `PHOTO;ENCODING=b;TYPE=JPEG:${photo}` : '',
+  ];
+  let n = 1;
+  if (CONFIG.whatsapp){ lines.push(`item${n}.URL:https://wa.me/${CONFIG.whatsapp}`, `item${n}.X-ABLabel:WhatsApp`); n++; }
+  if (CONFIG.bookingUrl && CONFIG.bookingUrl.trim() && !/YOUR-USERNAME/.test(CONFIG.bookingUrl)){ lines.push(`item${n}.URL:${CONFIG.bookingUrl}`, `item${n}.X-ABLabel:Book a call`); n++; }
+  CONFIG.socials.filter(s => s.url && s.url.trim()).forEach(s => { lines.push(`item${n}.URL:${s.url}`, `item${n}.X-ABLabel:${vEsc(s.name)}`); n++; });
+  lines.push(`REV:${new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'')}`, 'END:VCARD');
+  return lines.filter(Boolean).map(fold).join('\r\n');
+}
+
+function toast(msg){
+  const el = $('toast'); el.textContent = msg; el.classList.add('show');
+  clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.remove('show'), 3600);
+}
+
+$('saveBtn').addEventListener('click', async () => {
+  try{
+    const blob = new Blob([await buildVCard()], { type:'text/vcard;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = `${CONFIG.fullName}.vcf`;
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1500);
+    toast(t().tSaved);
+  }catch(e){ toast(t().tSaveFail); }
+});
+
+/* ---- Share + QR ---- */
+(function(){
+  const wrap = $('actions'), shareBtn = $('shareBtn'), qrBtn = $('qrBtn');
+  if (!CONFIG.showShare) shareBtn.remove();
+  if (!CONFIG.showQR) qrBtn.remove();
+  if (!CONFIG.showShare && !CONFIG.showQR){ wrap.hidden = true; return; }
+  if (!!CONFIG.showShare !== !!CONFIG.showQR) wrap.style.gridTemplateColumns = '1fr';
+
+  if (CONFIG.showShare){
+    shareBtn.addEventListener('click', async () => {
+      try{
+        if (navigator.share) await navigator.share({ title: CONFIG.fullName, text: `${CONFIG.fullName} — ${CONFIG.title}`, url: location.origin + location.pathname });
+        else { await navigator.clipboard.writeText(location.origin + location.pathname); toast(t().tCopied); }
+      }catch(e){}
+    });
+  }
+  if (CONFIG.showQR){
+    const modal = $('qrModal'), box = $('qrbox');
+    const openQR = () => {
+      const url = location.origin + location.pathname;
+      $('qrUrl').textContent = url;
+      if (box.dataset.rendered !== url){
+        try{
+          if (typeof qrcode !== 'function') throw new Error('qr lib missing');
+          const qr = qrcode(0, 'M'); qr.addData(url); qr.make();
+          let svg;
+          try{ svg = qr.createSvgTag({ cellSize: 8, margin: 12, scalable: true }); } catch(e){ svg = qr.createSvgTag(8, 12); }
+          svg = svg.replace(/fill="white"/g, 'fill="#FBF1E6"').replace(/fill="black"/g, 'fill="#0b3d2e"');
+          box.innerHTML = svg; box.dataset.rendered = url;
+        }catch(e){ box.innerHTML = `<p>${esc(t().qrOffline)}</p>`; }
+      }
+      modal.classList.add('show'); modal.setAttribute('aria-hidden','false');
+    };
+    const closeQR = () => { modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); };
+    qrBtn.addEventListener('click', openQR);
+    $('qrClose').addEventListener('click', closeQR);
+    modal.addEventListener('click', e => { if (e.target === modal) closeQR(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQR(); });
+  }
+})();
+
+/* ---- PWA: service worker + install button ---- */
+(function(){
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')){
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+  }
+  const btn = $('installBtn');
+  const standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  if (standalone) return;
+  let deferred = null;
+  window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferred = e; btn.hidden = false; });
+  window.addEventListener('appinstalled', () => { btn.hidden = true; deferred = null; track('installed'); });
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
+  if (isIOS) btn.hidden = false;   // iOS has no install event; show a hint instead
+  btn.addEventListener('click', async () => {
+    if (deferred){ deferred.prompt(); try{ await deferred.userChoice; }catch(e){} deferred = null; btn.hidden = true; }
+    else if (isIOS) toast(t().installIos);
+  });
+})();
+
+render();
+</script>
+</body>
+</html>
